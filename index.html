@@ -1,40 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | FAQ Accordion Card</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
+        <title>Frontend Mentor | FAQ Accordion Card</title>
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
+            :root {
+                --white: hsl(0, 0%, 100%);
+                --softViolet: hsl(273, 75%, 66%);
+                --softBlue: hsl(240, 73%, 65%);
+                --lighGrayishBlue: hsl(240, 5%, 91%);
+                --vDarkDesatBlue: hsl(238, 29%, 16%);
+                --softRed: hsl(14, 88%, 65%);
+                font-family: "Kumbh Sans", sans-serif;
+                font-size: 12px;
+            }
+            .card-container {
+                height: 700px;
+                width: 360px;
+                margin: 20px auto;
+                background-image: linear-gradient(
+                    var(--softViolet),
+                    var(--softBlue)
+                );
+                position: relative;
+            }
 
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
+            .card {
+                background-image: url("./images/bg-pattern-mobile.svg");
+                background-repeat: no-repeat;
+                background-position: 50% 0%;
+                background-size: 220px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -43%);
+                height: 500px;
+                width: 320px;
+                border-radius: 16px;
+                background-color: var(--white);
+                color: var(--vDarkDesatBlue);
+            }
 
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+            .mobile-img {
+                width: 220px;
+                height: auto;
+                margin-top: -100px;
+                margin-left: 50px;
+            }
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            .card-title {
+                margin-top: 50px;
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 28px;
+            }
+
+            hr {
+                border: 0;
+                border-top: 0.5px solid var(--lighGrayishBlue);
+                width: 285px;
+            }
+
+            details > summary {
+                list-style: none;
+                cursor: pointer;
+                padding-left: 20px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+
+            details > summary:hover {
+                color: var(--softRed);
+            }
+
+            details[open] > summary {
+                font-weight: 700;
+            }
+
+            details[open] summary:after {
+                -moz-transform: scaleY(-1);
+                -o-transform: scaleY(-1);
+                -webkit-transform: scaleY(-1);
+                transform: scaleY(-1);
+                filter: FlipV;
+                -ms-filter: "FlipV";
+                margin-top: -8px;
+            }
+
+            .details-text {
+                width: 240px;
+                margin-left: 20px;
+            }
+
+            /* Hide the default marker. */
+            details summary::-webkit-details-marker {
+                display: none;
+            }
+
+            details summary:after {
+                display: block;
+                float: right;
+                width: 18px;
+                height: 18px;
+                margin-right: 8px;
+                margin-bottom: -20px;
+                margin-top: 8px;
+                content: "";
+                background-image: url("./images/icon-arrow-down.svg");
+                background-repeat: no-repeat;
+                background-position: 0% 0%;
+            }
+
+            .attribution {
+                font-size: 20px;
+                font-family: "Lobster Two", cursive;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card-container">
+            <div class="card">
+                <img
+                    class="mobile-img"
+                    src="./images/illustration-woman-online-mobile.svg"
+                />
+                <h1 class="card-title">FAQ</h1>
+                <details>
+                    <summary>How many team members can I invite?</summary>
+                    <p class="details-text">
+                        You can invite up to 2 additional users on the Free
+                        plan. There is no limit on team members for the Premium
+                        plan.
+                    </p>
+                </details>
+                <hr />
+                <details>
+                    <summary>What is the maximum file upload size?</summary>
+                    <p class="details-text">
+                        No more than 2GB. All files in your account must fit
+                        your allotted storage space.
+                    </p>
+                </details>
+                <hr />
+                <details>
+                    <summary>How do I reset my password?</summary>
+                    <p class="details-text">
+                        Click “Forgot password” from the login page or “Change
+                        password” from your profile page. A resetlink will be
+                        emailed to you.
+                    </p>
+                </details>
+                <hr />
+                <details>
+                    <summary>Can I cancel my subscription?</summary>
+                    <p class="details-text">
+                        Yes! Send us a message and we’ll process your request no
+                        questions asked.
+                    </p>
+                </details>
+                <hr />
+                <details>
+                    <summary>Do you provide additional support?</summary>
+                    <p class="details-text">
+                        Chat and email support is available 24/7. Phone lines
+                        are open during normal business hours.
+                    </p>
+                </details>
+                <hr />
+            </div>
+        </div>
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Linzi Jayne</a>.
+        </div>
+    </body>
 </html>
