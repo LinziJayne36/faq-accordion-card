@@ -21,7 +21,7 @@
 }
 
 .card {
-    background-image: url("./images/bg-pattern-mobile.svg");
+    background-image: url("./../images/bg-pattern-mobile.svg");
     background-repeat: no-repeat;
     background-position: 50% 0%;
     background-size: 220px;
