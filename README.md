@@ -10,7 +10,7 @@ Thanks for checking out my take on this front-end coding challenge.
 
 ## Overview
 
-My challenge wass to build out this FAQ accordion card and get it looking as close to the design as possible.
+My challenge was to build out this FAQ accordion card and get it looking as close to the design as possible.
 
 ### The challenge
 
