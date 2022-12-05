@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://linzijayne36.github.io/faq-accordion-card/)
+-   Solution URL: [Check out my solution here](https://linzijayne36.github.io/faq-accordion-card/)
 
 ## My process
 
