@@ -29,6 +29,7 @@
                 font-family: "Kumbh Sans", sans-serif;
                 font-size: 12px;
             }
+
             .card-container {
                 height: 700px;
                 width: 360px;
@@ -49,7 +50,7 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -43%);
-                height: 500px;
+                height: 520px;
                 width: 320px;
                 border-radius: 16px;
                 background-color: var(--white);
@@ -61,6 +62,14 @@
                 height: auto;
                 margin-top: -100px;
                 margin-left: 50px;
+            }
+
+            .desktop-img {
+                display: none;
+            }
+
+            .desktop-cube-img {
+                display: none;
             }
 
             .card-title {
@@ -134,58 +143,131 @@
             .attribution a {
                 color: hsl(228, 45%, 44%);
             }
+
+            @media screen and (min-width: 1440px) {
+                .card-container {
+                    height: 600px;
+                    width: 1440px;
+                    margin-top: 5%;
+                }
+
+                .card {
+                    display: flex;
+                    background-image: url("./images/bg-pattern-desktop.svg");
+                    background-repeat: no-repeat;
+                    background-position: -630px -220px;
+                    background-size: 990px 780px;
+                    height: 450px;
+                    width: 800px;
+                }
+
+                .questions-section {
+                    margin-left: 60px;
+                    padding-right: 80px;
+                }
+
+                .card-title {
+                    text-align: left;
+                    padding-left: 20px;
+                }
+
+                .img-section {
+                    position: relative;
+                    width: 50%;
+                }
+
+                .mobile-img {
+                    display: none;
+                }
+
+                .desktop-img {
+                    display: block;
+                    position: absolute;
+                    top: 10%;
+                    left: -16%;
+                    height: 320px;
+                    transform: rotate(2deg);
+                    clip-path: inset(0px 0px 0px 61px);
+                    width: auto;
+                }
+
+                .desktop-cube-img {
+                    position: absolute;
+                    top: 62%;
+                    left: -19.5%;
+                    transform: translate(-50% -50%);
+                    display: block;
+                    margin-top: -100px;
+                    z-index: 900;
+                    height: 160px;
+                    width: auto;
+                }
+            }
         </style>
     </head>
     <body>
         <div class="card-container">
             <div class="card">
-                <img
-                    class="mobile-img"
-                    src="./images/illustration-woman-online-mobile.svg"
-                />
-                <h1 class="card-title">FAQ</h1>
-                <details>
-                    <summary>How many team members can I invite?</summary>
-                    <p class="details-text">
-                        You can invite up to 2 additional users on the Free
-                        plan. There is no limit on team members for the Premium
-                        plan.
-                    </p>
-                </details>
-                <hr />
-                <details>
-                    <summary>What is the maximum file upload size?</summary>
-                    <p class="details-text">
-                        No more than 2GB. All files in your account must fit
-                        your allotted storage space.
-                    </p>
-                </details>
-                <hr />
-                <details>
-                    <summary>How do I reset my password?</summary>
-                    <p class="details-text">
-                        Click “Forgot password” from the login page or “Change
-                        password” from your profile page. A resetlink will be
-                        emailed to you.
-                    </p>
-                </details>
-                <hr />
-                <details>
-                    <summary>Can I cancel my subscription?</summary>
-                    <p class="details-text">
-                        Yes! Send us a message and we’ll process your request no
-                        questions asked.
-                    </p>
-                </details>
-                <hr />
-                <details>
-                    <summary>Do you provide additional support?</summary>
-                    <p class="details-text">
-                        Chat and email support is available 24/7. Phone lines
-                        are open during normal business hours.
-                    </p>
-                </details>
-                <hr />
+                <div class="img-section">
+                    <img
+                        class="mobile-img"
+                        src="./images/illustration-woman-online-mobile.svg"
+                    />
+                    <img
+                        class="desktop-cube-img"
+                        src="./images/illustration-box-desktop.svg"
+                    />
+                    <img
+                        class="desktop-img"
+                        src="./images/illustration-woman-online-desktop.svg"
+                    />
+                </div>
+
+                <div class="questions-section">
+                    <h1 class="card-title">FAQ</h1>
+                    <details>
+                        <summary>How many team members can I invite?</summary>
+                        <p class="details-text">
+                            You can invite up to 2 additional users on the Free
+                            plan. There is no limit on team members for the
+                            Premium plan.
+                        </p>
+                    </details>
+                    <hr />
+                    <details>
+                        <summary>What is the maximum file upload size?</summary>
+                        <p class="details-text">
+                            No more than 2GB. All files in your account must fit
+                            your allotted storage space.
+                        </p>
+                    </details>
+                    <hr />
+                    <details>
+                        <summary>How do I reset my password?</summary>
+                        <p class="details-text">
+                            Click “Forgot password” from the login page or
+                            “Change password” from your profile page. A
+                            resetlink will be emailed to you.
+                        </p>
+                    </details>
+                    <hr />
+                    <details>
+                        <summary>Can I cancel my subscription?</summary>
+                        <p class="details-text">
+                            Yes! Send us a message and we’ll process your
+                            request no questions asked.
+                        </p>
+                    </details>
+                    <hr />
+                    <details>
+                        <summary>Do you provide additional support?</summary>
+                        <p class="details-text">
+                            Chat and email support is available 24/7. Phone
+                            lines are open during normal business hours.
+                        </p>
+                    </details>
+                    <hr />
+                </div>
             </div>
         </div>
         <div class="attribution">
@@ -196,5 +278,17 @@
                 >Frontend Mentor</a
             >. Coded by <a href="#">Linzi Jayne</a>.
         </div>
+        <script>
+            const detailSelects = document.querySelectorAll("details");
+            detailSelects.forEach((item) => {
+                item.addEventListener("click", (e) => {
+                    detailSelects.forEach((detail) => {
+                        if (detail !== item) {
+                            detail.removeAttribute("open");
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
